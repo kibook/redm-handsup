@@ -1,6 +1,6 @@
 local dict = 'script_proc@robberies@homestead@lonnies_shack@deception'
 local anim = 'hands_up_loop'
-local control = 0x4CC0E2FE
+local control = `INPUT_OPEN_SATCHEL_MENU`
 local enabled = false
 local speed = 4.0
 
@@ -59,10 +59,10 @@ CreateThread(function()
 		end
 
 		if enabled then
-			DisableControlAction(0, 0x07CE1E61, true)
-			DisableControlAction(0, 0xB2F377E8, true)
-			DisableControlAction(0, 0x018C47CF, true)
-			DisableControlAction(0, 0x2277FAE9, true)
+			DisableControlAction(0, `INPUT_ATTACK`, true)
+			DisableControlAction(0, `INPUT_MELEE_ATTACK`, true)
+			DisableControlAction(0, `INPUT_MELEE_GRAPPLE_CHOKE`, true)
+			DisableControlAction(0, `INPUT_MELEE_GRAPPLE`, true)
 
 			SwitchToUnarmed()
 
